@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "augeos/devsecops-training"
+    registry = "augeos/devsecops"
     registryCredential = "DockerHub"
     dockerImage = ''
   }
@@ -20,7 +20,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('', registryCredential ) {
-            dockerImage.push('$BUILD_NUMBER')
+            dockerImage.push('latest')
           }
         }
       }
