@@ -16,7 +16,7 @@ pipeline {
       }
     }
     
-    stage('SCA - Safety') {
+    stage('SCA') {
       steps {
         sh "sudo pip3 install safety"
         sh "rm -rf safety.json || true"
