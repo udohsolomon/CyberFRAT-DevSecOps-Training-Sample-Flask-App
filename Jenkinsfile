@@ -27,7 +27,6 @@ pipeline {
     
     stage('SAST') {
       steps {
-        sh "pip3 install bandit"
         sh "rm -rf bandit.json || true"
         sh "bandit -r -f=json -o=bandit.json . || true"
         sh "cat bandit.json"
