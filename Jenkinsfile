@@ -20,7 +20,7 @@ pipeline {
       steps {
         sh "pip3 install safety"
         sh "rm -rf safety.json || true"
-        sh "safety check -r requirements.txt --json > safety.json || true"
+        sh "safety check -r requirements.txt --json https://github.com/deepshankaryadav/CyberFRAT-DevSecOps-Training-Sample-Flask-App.git > safety.json || true"
         sh "cat safety.json"
       }
     }
